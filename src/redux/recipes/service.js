@@ -1,5 +1,6 @@
+const URLBeginning = "https://powerful-thicket-82370.herokuapp.com/";
 const addRecipe = async (recipe) => {
-    const response = await fetch('http://localhost:3001/recipes', {
+    const response = await fetch(`${URLBeginning}recipes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -18,7 +19,7 @@ const addRecipe = async (recipe) => {
   };
   
   const getRecipes = async (searchBy) => {
-    const response = await fetch(`http://localhost:3001/recipes?searchBy=${searchBy}`, {
+    const response = await fetch(`${URLBeginning}recipes?searchBy=${searchBy}`, {
       method: 'GET',
       mode: 'cors'
     });
@@ -26,7 +27,7 @@ const addRecipe = async (recipe) => {
   };
   
   const deleteRecipe = async(id) => {
-    const response = await fetch('http://localhost:3001/recipes', {
+    const response = await fetch(`${URLBeginning}recipes`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
